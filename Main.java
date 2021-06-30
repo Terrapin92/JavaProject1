@@ -64,19 +64,16 @@ private JPanel topPanel(){
     }
 
     public void actionPerformed(ActionEvent e){
-        try {
+    try {
         String expressionString = expressionField.getText();
         if(e.getSource() == prefixToPostfix){
-        String converted = Convert.fromPrefixToPostfix(expressionString);
-        resultTextField.setText(converted);
+            String converted = Convert.fromPrefixToPostfix(expressionString);
+            resultTextField.setText(converted);
         } else if (e.getSource() == postfixToPrefix) {
-        String converted = Convert.fromPostfixToPrefix(expressionString);
-        resultTextField.setText(converted);
+            String converted = Convert.fromPostfixToPrefix(expressionString);
+            resultTextField.setText(converted);
         }
-        } catch (NullPointerException | IOException | SyntaxError ex){
+    } catch (NullPointerException | IOException | SyntaxError ex){
         JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-        
-        }
-        }
-        
+    }
+}
